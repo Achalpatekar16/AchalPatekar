@@ -1,133 +1,25 @@
 <!DOCTYPE html>
-<html lang ="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>document</title>
-        <link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> DEGITAL CLOCK</title>
+    <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="main">
-            <header class="header">
-                <a href="#" class="logo"> Developer <span>X</span>
-                </a>
-                
-                <nav class="navbar">
-                    <a href="#home" class="active">Home</a>
-                    <a href="# about" >About</a>
-                    <a href="# Education">Education</a>
-                    <a href="# Skills">Skills</a>
-                    <a href="#Contact us">Contact us</a>
-                </nav>
-                
-            </header>
-        </div>
-        <div class="aboutme">
-            <h1>About <span>Me</span></h1>
-            <img src="about pic.jpg">
-            <div class="About">
-                <h5>
-                <p>Hello I Am</p>
-                    <p>Achal <span>Patekar</span></p>
-                    <p>I Am Fresher For </br>Web Devlopment</p>
-                    <p>Training:Employbilitiy Skill Devlopment
-                        <br> (ESD) Conducted By Zenser
-                    </p>
-                    </h5>
-                
-            </div>
-        </div>
-        <div class="Education">
-            <h1>Education <span>Details</span></h1>
-            <img src="Education.jpg">
-            <div class="Education-info">
-            <p>10th:</p>
-            <span class="info"> School:- Janta Vidhyalaya and Junior collage Satpur Nashik<br>
-                percentage:65.40%
-            </span>
-            <p>12th:</p>
-            <span class="info"> collage:- Janta Vidhyalaya and Junior collage Satpur Nashik<br>
-                percentage:54.31%
-            </span>
-            <p>BE:</p>
-            <span class="info"> collage:- Janta Vidhyalaya and Junior collage Satpur Nashik<br>
-                SGPA:9.05
-            </span>
-            </div>
-        </div>
-        <div class="tech-skill">
-        <div class="skills">
-            <h1>Technical <span>Skills</span></h1>
-            <p>HTML</p>
+        <div class="hero">
             <div class="container">
-                <div class="skills html">90%</div>
-            </div>
-            <p>CSS</p>
-            <div class="container">
-                <div class="skills css">80%</div>
-            </div>
-            <p>JAVASCRIPT</p>
-            <div class="container">
-                <div class="skills javascript">65%</div>
-            </div>
-            <p>JAVA</p>
-            <div class="container">
-                <div class="skills java">60%</div>
-            </div>
+                <div class="clock">
+                    <span id="hrs">00</span>
+                    <span>:</span>
+                    <span id="min">00</span>
+                    <span>:</span>
+                    <span id="sec">00</span>
+                </div>
             </div>
         </div>
-        <div class="Contact">
-            <h1>Contact <span>Us</span></h1>
-            <div class="wrapper"> 
-                <div id="error_message"> 
-                </div> 
-                <form action="" 
-                      id="myform" 
-                      onsubmit="return validate();"> 
-                      <p> username:</p>
-                    <div class="input_field"> 
-                        <input type="text" 
-                               placeholder="Name" 
-                               id="name"> 
-                    </div> 
-                    <p> subject:</p>
-                    <div class="input_field"> 
-                        </p><input type="text" 
-                               placeholder="Subject" 
-                               id="subject"> 
-                    </div> 
-                    <p> Phone NO:</p>
-                    <div class="input_field"> 
-                        <input type="text" 
-                               placeholder="Phone" 
-                               id="phone"> 
-                    </div> 
-                    <p> Email Id:</p>
-                    <div class="input_field"> 
-                        <input type="text" 
-                               placeholder="Email" 
-                               id="email"> 
-                    </div> 
-                    <p>Message:</p>
-                    <div class="input_field"> 
-                        <textarea placeholder="Message" 
-                                  id="message"> 
-                        </textarea> 
-                    </div> 
-                    <div class="btn"> 
-                        <input type="submit"> 
-                    </div> 
-                </form> 
-      
-        </div>
-        <div class="footer-a">
-        <footer class="footer">
-            <p>Contact</p>
-            <p>Email:- achalpatekar16@gmail.com</p>
-            <p>phone no: 8975837362</p>
-        </footer>
-        </div>
-        <script src="first.js"></script>
+        <script src="script.js">
+        </script>
     </body>
-</html>
+    </html>

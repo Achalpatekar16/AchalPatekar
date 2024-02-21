@@ -1,233 +1,88 @@
 *{
     margin: 0;
-    padding:0;
+    padding: 0;
+    font-family: 'poppins' 'sans-serif';
+    box-sizing: border-box;
 }
-body{
-    background-image: url("img.webp");
-    background-size: cover;
-    color:white;
-}
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
+
+
+.hero{
     width: 100%;
-    padding: 15px;
-    background:transparent;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 100;
-}
-.logo{
-    font-size: 32px;
+    min-height: 100vh;
+    background-color: gray;
     color: black;
-    text-decoration: none;
-    font-weight: 700;
-    margin-right: 500px;
-}
-.logo span{
-    color: red;
-}
-.navbar a {
-    font-size: 18px;
-    color:black;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    transition: .3s;
-}
-.navbar .active{
-    color:red;
-}
-.navbar a:hover{
-    color: red;
-}
-
-.aboutme{
-    padding-top: 200px;
-
-}
-.aboutme img{
-    width: 200px;
-    height: 280px;
-    float: right;
-    margin-right: 200px;
-    border: 5px solid black;
-    border-radius: 50%;    
-    transition: .1s;
-    position: static;
+    position: relative;
     
-}
-.aboutme img:hover{
-    transform: scale(1.2);
-
-}
-
-.aboutme h1{
-    text-align: center;
-    color: black;
-    font-size: 50px;
-}
-.aboutme h1 span{
-    color:red;
-}
-.About{
-    padding-top: 50px;
-    margin-left: 300px;
-    font-size: 30px;
-}
-.About h5{
-    padding-top: 50px;
-}
-.About p{
-    
-    color:black;
-}
-.About p span{
-    color: red;
-}
-.Education{
-    padding-top: 200px;
-    color: black;
-}
-
-.Education h1 {
-    text-align: center;
-    color: black;
-    font-size: 50px;
-}
-.Education h1 span{
-    color:red;
-}
-.Education img{
-    padding-top: 60px;
-    margin-left: 150px;
-}
-.Education-info{
-    padding-top: 50px;
-    float: right;
-    margin-right: 200px;
-    font-size: 20px;
-}
-.Education-info p{
-    text-align: center;
-}
-.skills{
-    padding-top:10px ;
-    text-align: center;
-    padding-bottom: 10px;
-    color:black;
-
-}  
-.skills h1{
-    padding-top: 150px;
-    font-size: 50px;
-}
-.skills h1 span{
-    color:red;
-}
-.skills p{
-    padding-top: 20px;
 }
 .container{
-    width:30%;
-    background-color: #ddd;
-    margin-left: 35%;
-}  
-.html{
-    width:90%;
-    height: 5px;
-    background-color:gray;
-}
-.css{
-    width:80%;
-    height: 5px;
-    background-color:gray;
-}
-.javascript{
-    width:65%;
-    height: 5px;
-    background-color:gray;
-}
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 5px  solid black ;
 
-.java{
-    width:60%;
-    height: 5px;
-    background-color:gray;
 }
+.clock{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(40px);
+}
+.container::before{
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: #df4c38;
+    border-radius: 5px;
+    border:  5px dotted white;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    z-index: -1;
 
-.Contact{
-    padding-top:150px ;
+}
+.container::after{
+    content: '';
+    width: 100px;
+    height: 100px;
+    background: #099156;
+    border-radius: 5px;
+    border: 5px dotted white;
+    position:absolute;
+    left: 200px;
+    top: 45px;
+    z-index: -1;
+}
+.clock span{
+    font-size: 40px;
+    width: 50px;
+    display: inline-block;
     text-align: center;
-    font-size:25px;
+    position: relative;
 }
-.Contact h1{
-    color: black;
+.clock span::after{
+    font-size: 8px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%);
 }
-.Contact h1 span{
-    color:red;
+#hrs::after{
+    content: 'HOURS';
 }
-.wrapper{
-    padding-top: 20px;
+#min::after{
+    content: 'MIN';
 }
-.wrapper .input_field { 
-	margin-bottom: 10px; 
-} 
-.wrapper .input_field input[type="text"],.wrapper textarea{
-    border: 1px soild red;
-    padding: 9px;
-    background: black;
-    color: gray;
+#sec::after{
+    content: 'SEC';
 }
-.wrapper textarea { 
-	resize: none; 
-	height: 50px; 
-} 
-.wrapper p{
-    font-size: 20px;
-}
-.wrapper .btn input[type="submit"] { 
-	border: 0px; 
-	margin-top: 15px; 
-	padding: 10px; 
-	text-align: center; 
-	background: black; 
-	color: #fcfbf7; 
-	text-transform: uppercase; 
-	letter-spacing: 5px; 
-	font-weight: bold; 
-	border-radius: 25px; 
-	cursor: pointer; 
-   
-} 
-.wrapper .btn input[type="submit"]:hover{
-    color:black;
-    background: rgb(228, 91, 91);
-    box-shadow:  5px 5px  white;
-}
-#error_message { 
-	margin-bottom: 20px; 
-	
-	padding: 0px; 
-	text-align: center; 
-	font-size: 14px; 
-	transition: all 0.5s ease; 
-}
-.footer-a{
-    padding-top: 100px;
-}
-.footer{
-    background-color: transparent;
-    text-align: center;
-    font-size: 30px;
-    color:black
+div:hover{
+    box-shadow:0 0 5px cyan,0 0 25px cyan,0 0 50px cyan,0 0 100px cyan,0 0 200px;
 }
 
-@media screen and (max-width:600px) {
-    div{
-        width:auto;
-        position: static;
-    }
-    
-}
