@@ -1,0 +1,223 @@
+
+
+                                               Assignment Dotnet
+
+ Q2]  Given a string s, find the length of the longest substring without repeating characters.
+Example 1:
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+Example 2:
+
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+Example 3:
+
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+ 
+Constraints:
+
+0 <= s.length <= 5 * 104
+s consists of English letters, digits, symbols and spaces.
+solution:-
+ Ex 1.solution:-
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static int LengthOfLongestSubstring(string s) {
+        int n = s.Length;
+        HashSet<char> set = new HashSet<char>();
+        int maxLength = 0, i = 0, j = 0;
+        
+        while (i < n && j < n) {
+            if (!set.Contains(s[j])) {
+                set.Add(s[j++]);
+                maxLength = Math.Max(maxLength, j - i);
+            } else {
+                set.Remove(s[i++]);
+            }
+        }
+        
+        return maxLength;
+    }
+
+    static void Main(string[] args)
+    {
+        string s = "abcabcbb";
+        Console.WriteLine(LengthOfLongestSubstring(s)); // Output: 3
+    }
+}
+ ouput:-3
+
+ Ex2. solution:-
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static int LengthOfLongestSubstring(string s) {
+        int n = s.Length;
+        HashSet<char> set = new HashSet<char>();
+        int maxLength = 0, i = 0, j = 0;
+        
+        while (j < n) {
+            if (!set.Contains(s[j])) {
+                set.Add(s[j]);
+                j++;
+                maxLength = Math.Max(maxLength, j - i);
+            } else {
+                set.Remove(s[i]);
+                i++;
+            }
+        }
+        
+        return maxLength;
+    }
+
+    static void Main(string[] args)
+    {
+        string s = "bbbbb";
+        Console.WriteLine(LengthOfLongestSubstring(s)); // Output: 1
+    }
+}
+ Output: 1
+
+Ex3 .solution:- 
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static int LengthOfLongestSubstring(string s) {
+        int n = s.Length;
+        HashSet<char> set = new HashSet<char>();
+        int maxLength = 0, i = 0, j = 0;
+        
+        while (j < n) {
+            if (!set.Contains(s[j])) {
+                set.Add(s[j]);
+                j++;
+                maxLength = Math.Max(maxLength, j - i);
+            } else {
+                set.Remove(s[i]);
+                i++;
+            }
+        }
+        
+        return maxLength;
+    }
+
+    static void Main(string[] args)
+    {
+        string s = "pwwkew";
+        Console.WriteLine(LengthOfLongestSubstring(s)); // Output: 3
+    }
+}
+Output:-3
+
+Q3]Find non-repeating characters in a string 
+ Solution:-
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static List<char> FindNonRepeatingCharacters(string s)
+    {
+        List<char> nonRepeatingChars = new List<char>();
+
+        // Count occurrences of each character
+        foreach (char c in s)
+        {
+            if (s.IndexOf(c) == s.LastIndexOf(c)) // Check if the character appears only once in the string
+            {
+                nonRepeatingChars.Add(c);
+            }
+        }
+
+        return nonRepeatingChars;
+    }
+
+    static void Main(string[] args)
+    {
+        string s = "hello world";
+        List<char> nonRepeatingChars = FindNonRepeatingCharacters(s);
+
+        Console.WriteLine("Non-repeating characters:");
+        foreach (char c in nonRepeatingChars)
+        {
+            Console.WriteLine(c);
+        }
+    }
+}
+ output:-
+Non-repeating characters:
+h
+e
+ 
+w
+r
+d
+
+
+Q4:You are given an array of integers. 
+Write a C# program to find the frequency of each unique element in the array and 
+store the results in a dictionary where the key is the element and the value is its frequency.
+Then, print the elements and their frequencies.
+
+Example:
+Input:
+int[] numbers = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
+
+Solution:-
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static Dictionary<int, int> FindElementFrequency(int[] numbers)
+    {
+        Dictionary<int, int> frequencyDict = new Dictionary<int, int>();
+
+        // Count the frequency of each element
+        foreach (int num in numbers)
+        {
+            if (frequencyDict.ContainsKey(num))
+            {
+                frequencyDict[num]++;
+            }
+            else
+            {
+                frequencyDict[num] = 1;
+            }
+        }
+
+        return frequencyDict;
+    }
+
+    static void Main(string[] args)
+    {
+        int[] numbers = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
+        Dictionary<int, int> frequencyDict = FindElementFrequency(numbers);
+
+        // Print elements and their frequencies
+        Console.WriteLine("Elements and their frequencies:");
+        foreach (KeyValuePair<int, int> kvp in frequencyDict)
+        {
+            Console.WriteLine($"Element: {kvp.Key}, Frequency: {kvp.Value}");
+        }
+    }
+}
+  Output:-
+Elements and their frequencies:
+Element: 1, Frequency: 1
+Element: 2, Frequency: 2
+Element: 3, Frequency: 3
+Element: 4, Frequency: 4
